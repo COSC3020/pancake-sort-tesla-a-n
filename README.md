@@ -23,9 +23,47 @@ I've provided some basic testing code that uses
 Hint: Start by thinking about the calls to `flip()` required to move a *single*
 element into its correct position.
 
+Strategy:
+  1. Find the largest pancake in the unsorted portion
+  2. Flip the array to bring the largest element to the top
+  3. Flip the entire unsorted portion to move the largest element to its final position
+  4. Reduce problem size by 1 and repeat until sorted
+
+Flip:
+  - given array and position n, reverse order of elements from index 0 to n-1
+  - flip([1, 2, 3, 4], 2) -> [2, 1, 3, 4]
+
 ## Runtime Analysis
 
 What is the asymptotic runtime ($\Theta$) of your algorithm in terms of the
 number of comparisons of pancakes? What is it in terms of the number of flips?
 Add your answer to this markdown file.
+
+### Number of Comparisons
+
+for each pos i in array, find max element in first i elements. Requires i-1 comparisons
+
+Total comparisons = (n-1) + (n-2) + ... + 1 = n(n-1)/2 = $/Theta(n^2)$
+
+### Number of Flips
+
+Worst case for each position i: 
+
+  - one flip to bring the largest element to the top if its not already there
+  - one flip to move it to its final position
+
+This means at most 2(n-1) flips for an array of size n
+
+then the number of flips is $/Theta(n)$ in the worst case
+
+BUT the overall time complexity is dominated by the comparisons: $/Theta(n^2)$
+
+## Sources
+
+[Leetcode](https://leetcode.com/problems/pancake-sorting/description/)
+
+[Visualizer](https://www.sortvisualizer.com/pancakesort/)
+
+[GeeksforGeeks](https://www.geeksforgeeks.org/pancake-sorting/)
+
 
