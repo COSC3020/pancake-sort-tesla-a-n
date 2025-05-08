@@ -2,7 +2,7 @@
 
 There is an abstract data type (ADT) called a *pancake array*, which provides
 the function `flip(array, n)`, which takes the top (first) $n$ items in the
-array and "flips them over", i.e. reverses their order.
+array and "flips them over", i.e. reverses their order. 
 
 For example, if you called `flip([1, 2, 3, 4], 2)`, the result would
 be the array  `[2, 1, 3, 4]`, because the order of the (first) top 2
