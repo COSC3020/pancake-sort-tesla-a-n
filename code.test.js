@@ -15,3 +15,25 @@ const testSort =
 jsc.assert(testSort);
 
 // test flip
+const testFlip = 
+    jsc.forall("array nat", "nat", function(arr, n) {
+        //make sure n is within bounds
+        const flipSize = n % (arr.length + 1);
+
+        //perform flip
+        const flipped = flip([...arr], flipSize);
+
+        //manually compute what flip should produce
+        const expected = [...arr];
+        const size = Math.min(flipSize, expected.length);
+        for (let i = 0; i < Math.floor(size / 2); i++) {
+            const temp = expected [i];
+            expected[i] = expected[size - 1 - i];
+            expected[size - 1 - i] = temp;
+        }
+
+        return JSON.stringify(flipped) === JSON.stringify(expected);
+    });
+jsc.assert(testFlip);
+
+
