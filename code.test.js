@@ -16,7 +16,7 @@ jsc.assert(testSort);
 
 // test flip
 const testFlip = 
-    jsc.forall("array nat", "nat", function(arr, n) {
+    jsc.forall("array nat", function(arr, n) {
         //make sure n is within bounds
         const flipSize = n % (arr.length + 1);
 
