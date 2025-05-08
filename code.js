@@ -1,8 +1,18 @@
 function flip(array, n) {
     //if n is bigger than array length, flip entire array
+    n = Math.min(n, array.length);
+    
     //make copy
+    const result = [...array];
+    
     //flip first n elememts
-    return array;
+    for (let i = 0; i < Math.floor(n / 2); i++) {
+        const temp = result[i];
+        result[i] = result[n - 1];
+        result[n - 1] = temp;
+    }
+    
+    return result;
 }
 
 //needs a function to find the max index
