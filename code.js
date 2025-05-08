@@ -32,24 +32,24 @@ function pancakeSort(array) {
     let arr = [...array];
     const n = arr.length;
     
-    //start large and reduce
+    // start large and reduce
     for (let currSize = n; currSize > 1; currSize--) {
-        //find index of max element in unsorted portion
+        // find index of max element in unsorted portion
         const maxIndex = findMaxIndex(arr, currSize - 1);
         
-        //if max element not at end
-        if (maxIndex !== currSize -1) {
-            //if max element not at beginning, flip
+        // if max element not at end
+        if (maxIndex !== currSize - 1) {
+            // if max element not at beginning, flip
             if (maxIndex !== 0) {
                 arr = flip(arr, maxIndex + 1);
             }
             
-            //then flip the subarray to move max to end
+            // then flip the subarray to move max to end
             arr = flip(arr, currSize);
         }
     }
     
-    return array;
+    return arr; // Fix: Return the sorted array
 }
 
 module.exports = { flip, pancakeSort };
