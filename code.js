@@ -51,3 +51,5 @@ function pancakeSort(array) {
     
     return array;
 }
+
+module.exports = { flip, pancakeSort };
