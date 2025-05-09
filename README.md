@@ -43,7 +43,7 @@ Add your answer to this markdown file.
 
 for each pos i in array, find max element in first i elements. Requires i-1 comparisons
 
-Total comparisons = (n-1) + (n-2) + ... + 1 = n(n-1)/2 = $/Theta(n^2)$
+Total comparisons = (n-1) + (n-2) + ... + 1 = n(n-1)/2 = $Theta(n^2)$
 
 ### Number of Flips
 
@@ -54,9 +54,9 @@ Worst case for each position i:
 
 This means at most 2(n-1) flips for an array of size n
 
-then the number of flips is $/Theta(n)$ in the worst case
+then the number of flips is $Theta(n)$ in the worst case
 
-BUT the overall time complexity is dominated by the comparisons: $/Theta(n^2)$
+BUT the overall time complexity is dominated by the comparisons: $Theta(n^2)$
 
 ## Sources
 
